@@ -12,6 +12,10 @@
   {
    "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_78MGz.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

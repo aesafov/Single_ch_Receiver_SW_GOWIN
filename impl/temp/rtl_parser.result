@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
-    "InstLine" : 16,
+    "InstLine" : 27,
     "InstName" : "My_CPU_CM3",
     "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
     "ModuleLine" : 9,
@@ -17,11 +17,19 @@
    },
    {
     "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
-    "InstLine" : 9,
+    "InstLine" : 13,
     "InstName" : "PLL_80MGz",
     "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_80MGz.v",
     "ModuleLine" : 9,
     "ModuleName" : "Gowin_PLLVR_80MGz"
+   },
+   {
+    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+    "InstLine" : 20,
+    "InstName" : "PLL_78MGz",
+    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_78MGz.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_PLLVR_78MGz"
    }
   ]
  }
