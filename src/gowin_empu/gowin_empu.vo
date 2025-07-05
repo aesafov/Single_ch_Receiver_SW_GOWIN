@@ -2,33 +2,39 @@
 //All rights reserved.
 //File Title: Post-PnR Simulation Model file
 //Tool Version: V1.9.9.03 Education (64-bit)
-//Created Time: Sun Nov 24 22:00:21 2024
+//Created Time: Sat Jul  5 18:29:51 2025
 
 `timescale 100 ps/100 ps
 module Gowin_EMPU_Top(
 	sys_clk,
+	gpioin,
 	uart0_rxd,
 	reset_n,
-	uart0_txd,
-	gpio
+	gpioout,
+	gpioouten,
+	uart0_txd
 );
 input sys_clk;
+input [15:0] gpioin;
 input uart0_rxd;
 input reset_n;
+output [15:0] gpioout;
+output [15:0] gpioouten;
 output uart0_txd;
-inout [15:0] gpio;
 wire GND;
 wire VCC;
-wire [15:0] gpio;
+wire [15:0] gpioin;
+wire [15:0] gpioout;
+wire [15:0] gpioouten;
 wire reset_n;
 wire sys_clk;
 wire uart0_rxd;
 wire uart0_txd;
-wire \Gowin_EMPU_inst/n685_5 ;
-wire \Gowin_EMPU_inst/n529_3 ;
+wire \Gowin_EMPU_inst/n717_5 ;
+wire \Gowin_EMPU_inst/n561_3 ;
 wire \Gowin_EMPU_inst/targflash0_readyout_23 ;
 wire \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_resetinserter_next_value_ce ;
-wire \Gowin_EMPU_inst/n513_8 ;
+wire \Gowin_EMPU_inst/n545_8 ;
 wire \Gowin_EMPU_inst/main_gowinemcu_ahbflash_read_14 ;
 wire \Gowin_EMPU_inst/main_gowinemcu_ahbflash_read_13 ;
 wire \Gowin_EMPU_inst/uart1_txd ;
@@ -60,8 +66,6 @@ wire \Gowin_EMPU_inst/apbtargexp2_pready ;
 wire [12:0] \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_resetinserter_next_value ;
 wire [12:0] \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr ;
 wire [1:0] \Gowin_EMPU_inst/builder_resetinserter_state ;
-wire [15:0] \Gowin_EMPU_inst/io_exp_output_o ;
-wire [15:0] \Gowin_EMPU_inst/io_exp_outputen_o ;
 wire [11:0] \Gowin_EMPU_inst/sram0_addr ;
 wire [3:0] \Gowin_EMPU_inst/sram0_wren ;
 wire [31:0] \Gowin_EMPU_inst/sram0_wdata ;
@@ -69,7 +73,6 @@ wire [14:2] \Gowin_EMPU_inst/targflash0_haddr ;
 wire [1:1] \Gowin_EMPU_inst/targflash0_htrans ;
 wire [11:10] \Gowin_EMPU_inst/apbtargexp2_paddr ;
 wire [31:0] \Gowin_EMPU_inst/targflash0_hrdata ;
-wire [15:0] \Gowin_EMPU_inst/io_exp_input_i ;
 wire [31:0] \Gowin_EMPU_inst/sram0_rdata ;
 wire [12:12] \Gowin_EMPU_inst/SRAM0ADDR ;
 wire [28:0] \Gowin_EMPU_inst/TARGFLASH0HADDR ;
@@ -92,22 +95,6 @@ wire [2:0] \Gowin_EMPU_inst/APBTARGEXP2PPROT ;
 wire [9:0] \Gowin_EMPU_inst/APBTARGEXP2PADDR ;
 wire [31:0] \Gowin_EMPU_inst/APBTARGEXP2PWDATA ;
 wire [3:0] \Gowin_EMPU_inst/TPIUTRACEDATA ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n5_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n7_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n9_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n11_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n13_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n15_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n17_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n19_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n21_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n23_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n25_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n27_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n29_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n31_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n33_6 ;
-wire \Gowin_EMPU_inst/u_GW_GPIO/n35_6 ;
 wire \Gowin_EMPU_inst/u_sram_subsystem/n36_6 ;
 wire \Gowin_EMPU_inst/u_sram_subsystem/n104_6 ;
 wire \Gowin_EMPU_inst/u_sram_subsystem/n172_6 ;
@@ -129,114 +116,18 @@ GND GND_cZ (
 GSR \Gowin_EMPU_inst/sys_reset  (
 	.GSRI(reset_n)
 );
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio0  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [0]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n5_6 ),
-	.IO(gpio[0]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [0])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio1  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [1]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n7_6 ),
-	.IO(gpio[1]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [1])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio2  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [2]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n9_6 ),
-	.IO(gpio[2]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [2])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio3  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [3]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n11_6 ),
-	.IO(gpio[3]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [3])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio4  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [4]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n13_6 ),
-	.IO(gpio[4]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [4])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio5  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [5]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n15_6 ),
-	.IO(gpio[5]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [5])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio6  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [6]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n17_6 ),
-	.IO(gpio[6]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [6])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio7  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [7]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n19_6 ),
-	.IO(gpio[7]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [7])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio8  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [8]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n21_6 ),
-	.IO(gpio[8]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [8])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio9  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [9]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n23_6 ),
-	.IO(gpio[9]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [9])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio10  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [10]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n25_6 ),
-	.IO(gpio[10]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [10])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio11  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [11]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n27_6 ),
-	.IO(gpio[11]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [11])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio12  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [12]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n29_6 ),
-	.IO(gpio[12]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [12])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio13  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [13]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n31_6 ),
-	.IO(gpio[13]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [13])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio14  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [14]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n33_6 ),
-	.IO(gpio[14]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [14])
-);
-IOBUF \Gowin_EMPU_inst/u_GW_GPIO/gpio15  (
-	.I(\Gowin_EMPU_inst/io_exp_output_o [15]),
-	.OEN(\Gowin_EMPU_inst/u_GW_GPIO/n35_6 ),
-	.IO(gpio[15]),
-	.O(\Gowin_EMPU_inst/io_exp_input_i [15])
-);
-LUT2 \Gowin_EMPU_inst/n685_s1  (
+LUT2 \Gowin_EMPU_inst/n717_s1  (
 	.I0(reset_n),
 	.I1(\Gowin_EMPU_inst/mtx_hreset_n ),
-	.F(\Gowin_EMPU_inst/n685_5 )
+	.F(\Gowin_EMPU_inst/n717_5 )
 );
-defparam \Gowin_EMPU_inst/n685_s1 .INIT=4'h7;
-LUT2 \Gowin_EMPU_inst/n529_s0  (
+defparam \Gowin_EMPU_inst/n717_s1 .INIT=4'h7;
+LUT2 \Gowin_EMPU_inst/n561_s0  (
 	.I0(\Gowin_EMPU_inst/targflash0_hsel ),
 	.I1(\Gowin_EMPU_inst/targflash0_htrans [1]),
-	.F(\Gowin_EMPU_inst/n529_3 )
+	.F(\Gowin_EMPU_inst/n561_3 )
 );
-defparam \Gowin_EMPU_inst/n529_s0 .INIT=4'h8;
+defparam \Gowin_EMPU_inst/n561_s0 .INIT=4'h8;
 LUT2 \Gowin_EMPU_inst/targflash0_readyout_s19  (
 	.I0(\Gowin_EMPU_inst/builder_resetinserter_state [0]),
 	.I1(\Gowin_EMPU_inst/builder_resetinserter_state [1]),
@@ -329,14 +220,14 @@ LUT2 \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_resetinserter_next_value_12_s
 	.F(\Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_resetinserter_next_value [12])
 );
 defparam \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_resetinserter_next_value_12_s2 .INIT=4'h8;
-LUT4 \Gowin_EMPU_inst/n513_s3  (
+LUT4 \Gowin_EMPU_inst/n545_s3  (
 	.I0(reset_n),
 	.I1(\Gowin_EMPU_inst/mtx_hreset_n ),
 	.I2(\Gowin_EMPU_inst/builder_resetinserter_state [0]),
 	.I3(\Gowin_EMPU_inst/builder_resetinserter_state [1]),
-	.F(\Gowin_EMPU_inst/n513_8 )
+	.F(\Gowin_EMPU_inst/n545_8 )
 );
-defparam \Gowin_EMPU_inst/n513_s3 .INIT=16'h7FF7;
+defparam \Gowin_EMPU_inst/n545_s3 .INIT=16'h7FF7;
 LUT4 \Gowin_EMPU_inst/main_gowinemcu_ahbflash_read_s6  (
 	.I0(\Gowin_EMPU_inst/builder_resetinserter_state [1]),
 	.I1(\Gowin_EMPU_inst/builder_resetinserter_state [0]),
@@ -450,8 +341,8 @@ defparam \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_0_s0 .INIT=1'b0;
 DFFRE \Gowin_EMPU_inst/builder_resetinserter_state_0_s0  (
 	.D(VCC),
 	.CLK(sys_clk),
-	.CE(\Gowin_EMPU_inst/n529_3 ),
-	.RESET(\Gowin_EMPU_inst/n513_8 ),
+	.CE(\Gowin_EMPU_inst/n561_3 ),
+	.RESET(\Gowin_EMPU_inst/n545_8 ),
 	.Q(\Gowin_EMPU_inst/builder_resetinserter_state [0])
 );
 defparam \Gowin_EMPU_inst/builder_resetinserter_state_0_s0 .INIT=1'b0;
@@ -466,7 +357,7 @@ defparam \Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr_12_s0 .INIT=1'b0;
 DFFR \Gowin_EMPU_inst/builder_resetinserter_state_1_s7  (
 	.D(\Gowin_EMPU_inst/main_gowinemcu_ahbflash_read_14 ),
 	.CLK(sys_clk),
-	.RESET(\Gowin_EMPU_inst/n685_5 ),
+	.RESET(\Gowin_EMPU_inst/n717_5 ),
 	.Q(\Gowin_EMPU_inst/builder_resetinserter_state [1])
 );
 defparam \Gowin_EMPU_inst/builder_resetinserter_state_1_s7 .INIT=1'b0;
@@ -497,7 +388,7 @@ EMCU \Gowin_EMPU_inst/u_emcu  (
 	.FLASHERR(GND),
 	.FLASHINT(GND),
 	.INITEXP0HTRANS({GND, GND}),
-	.IOEXPINPUTI({\Gowin_EMPU_inst/io_exp_input_i [15:0]}),
+	.IOEXPINPUTI({gpioin[15:0]}),
 	.SRAM0RDATA({\Gowin_EMPU_inst/sram0_rdata [31:0]}),
 	.TARGFLASH0HRDATA({\Gowin_EMPU_inst/targflash0_hrdata [31:0]}),
 	.TARGFLASH0HRUSER({GND, GND, GND}),
@@ -539,8 +430,8 @@ EMCU \Gowin_EMPU_inst/u_emcu  (
 	.DAPNTDOEN(\Gowin_EMPU_inst/u_emcu_310_DAPNTDOEN ),
 	.DAPJTAGNSW(\Gowin_EMPU_inst/u_emcu_310_DAPJTAGNSW ),
 	.TPIUTRACECLK(\Gowin_EMPU_inst/trace_clk ),
-	.IOEXPOUTPUTO({\Gowin_EMPU_inst/io_exp_output_o [15:0]}),
-	.IOEXPOUTPUTENO({\Gowin_EMPU_inst/io_exp_outputen_o [15:0]}),
+	.IOEXPOUTPUTO({gpioout[15:0]}),
+	.IOEXPOUTPUTENO({gpioouten[15:0]}),
 	.SRAM0ADDR({\Gowin_EMPU_inst/SRAM0ADDR [12], \Gowin_EMPU_inst/sram0_addr [11:0]}),
 	.SRAM0WREN({\Gowin_EMPU_inst/sram0_wren [3:0]}),
 	.SRAM0WDATA({\Gowin_EMPU_inst/sram0_wdata [31:0]}),
@@ -576,70 +467,6 @@ FLASH256K \Gowin_EMPU_inst/u_FLASH256K  (
 	.YADR({\Gowin_EMPU_inst/main_gowinemcu_ahbflash_addr [5:0]}),
 	.DIN({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
 	.DOUT({\Gowin_EMPU_inst/targflash0_hrdata [31:0]})
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n5_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [0]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n5_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n7_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [1]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n7_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n9_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [2]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n9_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n11_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [3]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n11_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n13_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [4]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n13_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n15_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [5]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n15_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n17_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [6]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n17_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n19_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [7]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n19_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n21_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [8]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n21_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n23_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [9]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n23_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n25_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [10]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n25_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n27_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [11]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n27_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n29_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [12]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n29_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n31_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [13]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n31_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n33_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [14]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n33_6 )
-);
-INV \Gowin_EMPU_inst/u_GW_GPIO/n35_s2  (
-	.I(\Gowin_EMPU_inst/io_exp_outputen_o [15]),
-	.O(\Gowin_EMPU_inst/u_GW_GPIO/n35_6 )
 );
 SDPB \Gowin_EMPU_inst/u_sram_subsystem/bram_sdp_00  (
 	.CLKA(sys_clk),

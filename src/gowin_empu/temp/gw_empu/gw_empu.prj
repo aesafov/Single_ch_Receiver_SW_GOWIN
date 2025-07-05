@@ -10,7 +10,7 @@
     <OptionList>
         <Option type="disable_insert_pad" value="1"/>
         <Option type="include_path" value="C:/Gowin/Gowin_V1.9.9.03_Education_x64/IDE/ipcore/gowin_empu_gw1ns4/data"/>
-        <Option type="include_path" value="E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/temp/gw_empu"/>
+        <Option type="include_path" value="E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/temp/gw_empu"/>
         <Option type="output_file" value="gowin_empu.vg"/>
         <Option type="output_template" value="gowin_empu_tmp.v"/>
         <Option type="ram_balance" value="1"/>

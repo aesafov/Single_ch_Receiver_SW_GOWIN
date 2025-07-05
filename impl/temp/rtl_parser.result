@@ -1,35 +1,43 @@
 [
  {
-  "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+  "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
   "InstLine" : 1,
   "InstName" : "Top_module",
-  "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+  "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
   "ModuleLine" : 1,
   "ModuleName" : "Top_module",
   "SubInsts" : [
    {
-    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
-    "InstLine" : 27,
-    "InstName" : "My_CPU_CM3",
-    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
+    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+    "InstLine" : 41,
+    "InstName" : "core_Cortex",
+    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
     "ModuleLine" : 9,
     "ModuleName" : "Gowin_EMPU_Top"
    },
    {
-    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
-    "InstLine" : 13,
-    "InstName" : "PLL_80MGz",
-    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_80MGz.v",
+    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+    "InstLine" : 17,
+    "InstName" : "PLL_100MGz",
+    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_PLL_100MGz.v",
     "ModuleLine" : 9,
-    "ModuleName" : "Gowin_PLLVR_80MGz"
+    "ModuleName" : "Gowin_PLLVR_PLL_100MGz"
    },
    {
-    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
-    "InstLine" : 20,
+    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+    "InstLine" : 22,
     "InstName" : "PLL_78MGz",
-    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_78MGz.v",
+    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_PLL_78MGz.v",
     "ModuleLine" : 9,
-    "ModuleName" : "Gowin_PLLVR_78MGz"
+    "ModuleName" : "Gowin_PLLVR_PLL_78MGz"
+   },
+   {
+    "InstFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+    "InstLine" : 27,
+    "InstName" : "inst_manchester",
+    "ModuleFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/manchester.vhd",
+    "ModuleLine" : 7,
+    "ModuleName" : "manchester"
    }
   ]
  }

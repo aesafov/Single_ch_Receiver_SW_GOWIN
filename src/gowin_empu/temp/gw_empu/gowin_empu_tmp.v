@@ -4,14 +4,16 @@
 //Tool Version: V1.9.9.03 Education (64-bit)
 //Part Number: GW1NSR-LV4CQN48PC6/I5
 //Device: GW1NSR-4C
-//Created Time: Sun Nov 24 22:00:21 2024
+//Created Time: Sat Jul  5 18:29:51 2025
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
 
 	Gowin_EMPU_Top your_instance_name(
 		.sys_clk(sys_clk), //input sys_clk
-		.gpio(gpio), //inout [15:0] gpio
+		.gpioin(gpioin), //input [15:0] gpioin
+		.gpioout(gpioout), //output [15:0] gpioout
+		.gpioouten(gpioouten), //output [15:0] gpioouten
 		.uart0_rxd(uart0_rxd), //input uart0_rxd
 		.uart0_txd(uart0_txd), //output uart0_txd
 		.reset_n(reset_n) //input reset_n

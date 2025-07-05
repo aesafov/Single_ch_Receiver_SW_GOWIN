@@ -7,8 +7,9 @@
     <FileList>
         <File path="src/Top_module.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_empu/gowin_empu.v" type="file.verilog" enable="1"/>
-        <File path="src/gowin_pllvr/gowin_pllvr_78MGz.v" type="file.verilog" enable="1"/>
-        <File path="src/gowin_pllvr/gowin_pllvr_80MGz.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pllvr/gowin_pllvr_PLL_100MGz.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pllvr/gowin_pllvr_PLL_78MGz.v" type="file.verilog" enable="1"/>
+        <File path="src/manchester.vhd" type="file.vhdl" enable="1"/>
         <File path="src/Single_ch_Receiver_SW_GOWIN.cst" type="file.cst" enable="1"/>
     </FileList>
 </Project>

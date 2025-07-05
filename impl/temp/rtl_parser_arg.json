@@ -2,27 +2,32 @@
  "Device" : "GW1NSR-4C",
  "Files" : [
   {
-   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/Top_module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_empu/gowin_empu.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_78MGz.v",
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_PLL_100MGz.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_80MGz.v",
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/gowin_pllvr/gowin_pllvr_PLL_78MGz.v",
    "Type" : "verilog"
+  },
+  {
+   "Library" : "work",
+   "Path" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/src/manchester.vhd",
+   "Type" : "vhdl"
   }
  ],
  "IncludePath" : [
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software/Single_ch_Receiver_SW_GOWIN/impl/temp/rtl_parser.result",
+ "ResultFile" : "E:/Project/NIIEFA/KSOI/Single_ch_Receiver/Software_github/Single_ch_Receiver_SW_GOWIN/impl/temp/rtl_parser.result",
  "Top" : "",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
